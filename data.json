@@ -1,0 +1,66 @@
+{
+  "siteTitle": "Andrea Meneghetti - Informatico",
+  "siteDescription": "Portfolio personale di Andrea Meneghetti, sviluppatore web con competenze in IA, Data Science e Game Development.",
+  "hero": {
+    "name": "Andrea Meneghetti",
+    "title": "Sviluppatore Web | Data Science Enthusiast",
+    "subtitle": "Appassionato di tecnologia e innovazione digitale"
+  },
+  "about": {
+    "title": "Informatico in Formazione - Specializzazione IA",
+    "para1": "Sono uno sviluppatore web con competenze trasversali che spaziano dallo sviluppo front-end (HTML, CSS, React) al backend (PHP, Spring), oltre a competenze avanzate in Data Science e AI. Attualmente sto completando la Laurea Magistrale in Intelligenza Artificiale presso l'Università degli Studi di Torino.",
+    "para2": "La mia passione è risolvere problemi complessi attraverso la tecnologia, dalla progettazione interfacce UX/UI con Figma, all'analisi di dataset con Python (numpy, pandas, pytorch), fino allo sviluppo di giochi con Unity. Sono sempre pronto ad apprendere nuove tecnologie e collaborare con team multidisciplinari.",
+    "skills": "Java, Spring Boot, PostgreSQL, HTML, CSS, PHP, React, Python, Numpy, Pandas, PyTorch, Figma, Unity, C#, Maven, JPA/Hibernate"
+  },
+  "projects": [
+    {
+      "id": "mindbody",
+      "title": "MindBody - Piattaforma Benessere Integrato",
+      "description": "Ecosistema di microservizi per il benessere psicofisico che integra supporto mentale, allenamento fisico e nutrizione in un'unica piattaforma.",
+      "techs": "Java, Spring Boot, PostgreSQL, JPA/Hibernate, Maven",
+      "image": "https://via.placeholder.com/600x400?text=MindBody+Platform",
+      "fullDescription": "MindBody è un progetto universitario che integra benessere mentale, allenamento fisico e nutrizione in un unico ecosistema di microservizi. Sviluppato come backend Java Spring Boot con database PostgreSQL, è organizzato in servizi separati ma coordinati tra loro per essere facilmente estendibile e manutenibile.",
+      "features": [
+        "Modulo benessere mentale con gestione sessioni e obiettivi personali",
+        "Modulo allenamento con CRUD di schede e tracciamento sessioni",
+        "Modulo nutrizione con condivisione ricette e sistema di like/voto",
+        "Classifica settimanale per motivazione community",
+        "Architettura a microservizi con Spring Boot",
+        "Persistenza dati con PostgreSQL e JPA/Hibernate",
+        "API REST per integrazione tra servizi",
+        "Health-check e logging centralizzato"
+      ],
+      "role": "Backend Developer",
+      "duration": "Progetto universitario",
+      "team": "Progetto individuale",
+      "result": "Piattaforma completa che dimostra competenze in progettazione microservizi, modellazione domini complessi e sviluppo backend enterprise con Java Spring Boot."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Laurea Magistrale in Intelligenza Artificiale",
+      "company": "Università degli Studi di Torino",
+      "date": "In corso",
+      "description": "Specializzazione in Intelligenza Artificiale. Approfondimento di machine learning, deep learning e applicazioni pratiche dell'IA."
+    },
+    {
+      "title": "Laurea Triennale in ICT",
+      "company": "Università degli Studi di Torino",
+      "date": "2022 - 2025",
+      "description": "Laurea Triennale in Tecnologie dell'Informazione e della Comunicazione. Formazione completa su sviluppo software, reti e sistemi informatici."
+    },
+    {
+      "title": "Diploma di Istituto Tecnico",
+      "company": "ITIS Majorana - Grugliasco (TO)",
+      "date": "Completato",
+      "description": "Diploma di Istituto Tecnico, indirizzo Automazione. Competenze tecniche in automazione industriale e sistemi informatici."
+    }
+  ],
+  "contacts": {
+    "email": "andrea.meneghetti03@gmail.com",
+    "phone": "+39 345 322 9633",
+    "linkedin": "https://linkedin.com/in/andreameneghetti",
+    "github": "https://github.com/andreameneghetti",
+    "location": "Torino (TO)"
+  }
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Esperienze - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00d4ff;
+            --accent-color: #ff006e;
+            --dark-bg: #0a0e27;
+            --darker-bg: #0f1419;
+            --text-light: #e0e0e0;
+            --text-muted: #888;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #00b4d4);
+            color: var(--dark-bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-danger {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .experience-card {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-company {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .experience-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .experience-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--darker-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            color: var(--primary-color);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--text-light);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+        }
+
+        .message {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message.success {
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .message.error {
+            background: rgba(255, 0, 110, 0.2);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .help-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .experience-buttons {
+                width: 100%;
+            }
+
+            .experience-buttons button {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Gestione Esperienze</h1>
+            <button class="btn-secondary" onclick="window.location.href='admin.html'">← Admin Panel</button>
+        </header>
+
+        <div id="message" class="message"></div>
+
+        <div class="section">
+            <h2>Le Tue Esperienze</h2>
+            <button class="btn-primary" style="width: 100%; margin-bottom: 1.5rem;" onclick="openModal()">
+                ➕ Aggiungi Nuova Esperienza
+            </button>
+            <div id="experienceList" class="experience-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal per aggiungere/modificare esperienza -->
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Aggiungi Esperienza</h2>
+                <button class="close-modal" onclick="closeModal()">✕</button>
+            </div>
+
+            <div class="form-group">
+                <label for="expTitle">Titolo/Ruolo</label>
+                <input type="text" id="expTitle" placeholder="es. Laurea Magistrale in Intelligenza Artificiale">
+                <div class="help-text">Il titolo del ruolo o della formazione</div>
+            </div>
+
+            <div class="form-group">
+                <label for="expCompany">Azienda/Istituzione</label>
+                <input type="text" id="expCompany" placeholder="es. Università degli Studi di Torino">
+            </div>
+
+            <div class="form-group">
+                <label for="expDate">Periodo</label>
+                <input type="text" id="expDate" placeholder="es. 2022 - Presente">
+                <div class="help-text">Indica il periodo (es. "2020 - 2023" o "In corso")</div>
+            </div>
+
+            <div class="form-group">
+                <label for="expDescription">Descrizione</label>
+                <textarea id="expDescription"
+                    placeholder="Descrivi le responsabilità, competenze acquisite o risultati ottenuti..."></textarea>
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn-primary" onclick="saveExperience()">💾 Salva</button>
+                <button class="btn-danger" onclick="closeModal()">Annulla</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api-client.js"></script>
+    <script>
+        let currentEditIndex = null;
+        let allExperiences = [];
+
+        // Carica tutte le esperienze
+        async function loadExperiences() {
+            const data = await PortfolioAPI.getData();
+            if (data && data.experience) {
+                allExperiences = data.experience;
+                renderExperiences();
+            }
+        }
+
+        // Renderizza la lista esperienze
+        function renderExperiences() {
+            const container = document.getElementById('experienceList');
+            container.innerHTML = '';
+
+            if (allExperiences.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Nessuna esperienza. Aggiungi la tua prima esperienza!</p>';
+                return;
+            }
+
+            allExperiences.forEach((exp, index) => {
+                const card = document.createElement('div');
+                card.className = 'experience-card';
+                card.innerHTML = `
+                    <div class="experience-header">
+                        <div class="experience-info">
+                            <h3>${exp.title}</h3>
+                            <div class="experience-company">${exp.company}</div>
+                            <div class="experience-date">${exp.date}</div>
+                        </div>
+                        <div class="experience-buttons">
+                            <button class="btn-secondary btn-small" onclick="editExperience(${index})">✎ Modifica</button>
+                            <button class="btn-danger btn-small" onclick="deleteExperience(${index})">🗑 Elimina</button>
+                        </div>
+                    </div>
+                    <div class="experience-description">${exp.description}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Apri modal per nuova esperienza
+        function openModal() {
+            currentEditIndex = null;
+            document.getElementById('modalTitle').textContent = 'Aggiungi Esperienza';
+            clearForm();
+            document.getElementById('experienceModal').classList.add('active');
+        }
+
+        // Chiudi modal
+        function closeModal() {
+            document.getElementById('experienceModal').classList.remove('active');
+        }
+
+        // Pulisci form
+        function clearForm() {
+            document.getElementById('expTitle').value = '';
+            document.getElementById('expCompany').value = '';
+            document.getElementById('expDate').value = '';
+            document.getElementById('expDescription').value = '';
+        }
+
+        // Modifica esperienza esistente
+        function editExperience(index) {
+            currentEditIndex = index;
+            const exp = allExperiences[index];
+
+            document.getElementById('modalTitle').textContent = 'Modifica Esperienza';
+            document.getElementById('expTitle').value = exp.title || '';
+            document.getElementById('expCompany').value = exp.company || '';
+            document.getElementById('expDate').value = exp.date || '';
+            document.getElementById('expDescription').value = exp.description || '';
+
+            document.getElementById('experienceModal').classList.add('active');
+        }
+
+        // Salva esperienza
+        async function saveExperience() {
+            const expData = {
+                title: document.getElementById('expTitle').value.trim(),
+                company: document.getElementById('expCompany').value.trim(),
+                date: document.getElementById('expDate').value.trim(),
+                description: document.getElementById('expDescription').value.trim()
+            };
+
+            // Validazione
+            if (!expData.title || !expData.company || !expData.date || !expData.description) {
+                PortfolioAPI.showMessage('Compila tutti i campi', 'error');
+                return;
+            }
+
+            // Aggiorna array locale
+            if (currentEditIndex !== null) {
+                allExperiences[currentEditIndex] = expData;
+            } else {
+                allExperiences.push(expData);
+            }
+
+            // Salva sul server
+            const result = await PortfolioAPI.updateExperience(allExperiences);
+
+            if (result.success) {
+                closeModal();
+                renderExperiences();
+            }
+        }
+
+        // Elimina esperienza
+        async function deleteExperience(index) {
+            if (!confirm('Sei sicuro di voler eliminare questa esperienza?')) {
+                return;
+            }
+
+            allExperiences.splice(index, 1);
+            const result = await PortfolioAPI.updateExperience(allExperiences);
+
+            if (result.success) {
+                renderExperiences();
+            }
+        }
+
+        // Carica esperienze all'avvio
+        loadExperiences();
+    </script>
+</body>
+
+</html>

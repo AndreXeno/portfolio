@@ -1,0 +1,519 @@
+/* ========================================
+   SMOOTH ANIMATIONS & TRANSITIONS
+   Inspired by premium portfolio sites
+   ======================================== */
+
+/* Base animation setup */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* ========================================
+   SCROLL ANIMATIONS - UNIFORM LATERAL SLIDE
+   ======================================== */
+
+/* Tutte le sezioni - slide da sinistra */
+section {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando animate, tornano al centro */
+section.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animazione inversa quando si scrolla indietro */
+section.animated-reverse {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger animation for project cards */
+.project-card {
+    opacity: 1;
+    /* Sempre completamente visibile */
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.project-card:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.project-card:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.project-card:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+/* Skill tags stagger - ALWAYS VISIBLE */
+.skill-tag {
+    opacity: 1 !important;
+    /* Sempre visibili */
+    transform: scale(0.98);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-tag.animated {
+    transform: scale(1);
+}
+
+.skill-tag:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.skill-tag:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.skill-tag:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.skill-tag:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.skill-tag:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.skill-tag:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+.skill-tag:nth-child(7) {
+    transition-delay: 0.35s;
+}
+
+.skill-tag:nth-child(8) {
+    transition-delay: 0.4s;
+}
+
+.skill-tag:nth-child(9) {
+    transition-delay: 0.45s;
+}
+
+.skill-tag:nth-child(10) {
+    transition-delay: 0.5s;
+}
+
+.skill-tag:nth-child(11) {
+    transition-delay: 0.55s;
+}
+
+.skill-tag:nth-child(12) {
+    transition-delay: 0.6s;
+}
+
+/* ========================================
+   HERO ANIMATIONS
+   ======================================== */
+
+/* Hero content - slide laterale da sinistra */
+.hero-content {
+    opacity: 0;
+    transform: translateX(-60px);
+    /* Cambiato da translateY a translateX */
+    animation: heroSlideIn 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes heroSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* Slide laterale */
+    }
+}
+
+/* Animazioni testo hero - slide laterale */
+.hero-content h1 {
+    animation: slideInFromLeft 0.6s ease-out 0.3s backwards;
+}
+
+.hero-content p {
+    animation: slideInFromLeft 0.6s ease-out 0.5s backwards;
+}
+
+.hero-content .cta-buttons {
+    animation: slideInFromLeft 0.6s ease-out 0.7s backwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+        /* Slide da sinistra */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scroll indicator animation */
+.scroll-indicator {
+    animation: bounce 2s ease-in-out infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* ========================================
+   BUTTON HOVER EFFECTS
+   ======================================== */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   CARD ANIMATIONS
+   ======================================== */
+
+.project-card,
+.experience-item {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 110, 0.1));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* ========================================
+   SKILL TAGS ANIMATION
+   ======================================== */
+
+.skill-tag {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.skill-tag::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.skill-tag:hover::after {
+    width: 80%;
+}
+
+/* ========================================
+   NAVIGATION ANIMATIONS
+   ======================================== */
+
+nav {
+    animation: navSlideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes navSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav a {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   CONTACT LINKS ANIMATION
+   ======================================== */
+
+.contact-link {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+}
+
+/* ========================================
+   EXPERIENCE TIMELINE ANIMATION
+   ======================================== */
+
+.experience-item {
+    position: relative;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.experience-item.animated::before {
+    opacity: 1;
+}
+
+.experience-item::after {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--dark-bg), 0 0 0 6px var(--primary-color);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.experience-item.animated::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ========================================
+   CUSTOM CURSOR (Optional)
+   ======================================== */
+
+.custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+    width: 60px;
+    height: 60px;
+    border-color: var(--accent-color);
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-cursor-dot.hover {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none;
+    }
+}
+
+/* ========================================
+   LOADING ANIMATION
+   ======================================== */
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(90deg,
+            rgba(0, 212, 255, 0.05) 0%,
+            rgba(0, 212, 255, 0.2) 50%,
+            rgba(0, 212, 255, 0.05) 100%);
+    background-size: 1000px 100%;
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS FOR ALL INTERACTIVE ELEMENTS
+   ======================================== */
+
+a,
+button,
+input,
+textarea,
+select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none;
+    }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+.project-card,
+.experience-item,
+.skill-tag,
+.btn {
+    will-change: transform;
+}
+
+/* Remove will-change after animation */
+.animated {
+    will-change: auto;
+}

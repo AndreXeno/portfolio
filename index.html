@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Meneghetti - Software Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <!-- Navigazione -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Chi Sono</a></li>
+            <li><a href="#projects">Progetti</a></li>
+            <li><a href="#experience">Esperienza</a></li>
+            <li><a href="#contact">Contatti</a></li>
+            <li><a href="admin.html" style="color: var(--accent-color);">⚙️ Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Andrea Meneghetti</h1>
+            <p>Software Developer | Full-Stack Engineer</p>
+            <p style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 2rem;">
+                Creo soluzioni digitali innovative e scalabili
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">Vedi i Progetti</a>
+                <a href="#contact" class="btn btn-secondary">Contattami</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Chi Sono</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Sviluppatore Appassionato di Tecnologia</h3>
+                <p>
+                    Sono un informatico con esperienza nello sviluppo di applicazioni web moderne
+                    e soluzioni backend robuste. Mi piace risolvere problemi complessi e creare
+                    interfacce user-friendly che risolvono problemi reali.
+                </p>
+                <p>
+                    Con una solida formazione in ingegneria del software, collaboro con team
+                    multidisciplinari per consegnare progetti di qualità che superano le aspettative.
+                </p>
+            </div>
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Competenze Tecniche</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">Spring Boot</div>
+                    <div class="skill-tag">PostgreSQL</div>
+                    <div class="skill-tag">JPA/Hibernate</div>
+                    <div class="skill-tag">Maven</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">React</div>
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">PyTorch</div>
+                    <div class="skill-tag">Unity</div>
+                    <div class="skill-tag">C#</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Progetti Principali</h2>
+        <div class="projects-grid">
+            <!-- MindBody Project -->
+            <div class="project-card" data-project-id="mindbody">
+                <h3>MindBody - Piattaforma Benessere Integrato</h3>
+                <p>Ecosistema di microservizi per il benessere psicofisico che integra supporto mentale, allenamento
+                    fisico e nutrizione in un'unica piattaforma.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">Spring Boot</span>
+                    <span class="project-tag">PostgreSQL</span>
+                    <span class="project-tag">JPA/Hibernate</span>
+                    <span class="project-tag">Maven</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Esperienza Professionale</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Senior Developer</h3>
+                    <span class="date">2022 - Presente</span>
+                </div>
+                <div class="experience-company">TechCorp Solutions</div>
+                <div class="experience-description">
+                    Guida dello sviluppo di progetti enterprise, mentoring di junior developers
+                    e ottimizzazione dell'architettura del sistema.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Full-Stack Developer</h3>
+                    <span class="date">2020 - 2022</span>
+                </div>
+                <div class="experience-company">Digital Innovations Inc</div>
+                <div class="experience-description">
+                    Sviluppo di applicazioni web full-stack, implementazione di APIs REST
+                    e gestione database PostgreSQL.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Junior Developer</h3>
+                    <span class="date">2019 - 2020</span>
+                </div>
+                <div class="experience-company">StartUp Hub</div>
+                <div class="experience-description">
+                    Primi progetti professionali, apprendimento best practices,
+                    collaborazione con team agile.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact">
+            <h2>Contattami</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-muted);">
+                Sono sempre interessato a nuove opportunità e collaborazioni.
+                Non esitare a contattarmi!
+            </p>
+            <div class="contact-links">
+                <a href="mailto:andrea@example.com" class="contact-link">Email</a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link">LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://twitter.com" target="_blank" class="contact-link">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Andrea Meneghetti. All rights reserved.</p>
+    </footer>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>📊 Area Personale</h2>
+                <button class="admin-close" onclick="closeAdmin()">Chiudi</button>
+            </div>
+
+            <div id="loginSection">
+                <div class="login-form">
+                    <h3 class="login-title">🔐 Login</h3>
+                    <div id="loginMessage"></div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="adminPassword" placeholder="Inserisci la password">
+                    </div>
+                    <button class="btn-save" onclick="loginAdmin()" style="width: 100%;">Accedi</button>
+                </div>
+            </div>
+
+            <div id="adminSection" style="display: none;">
+                <div class="admin-tabs">
+                    <button class="admin-tab active" onclick="switchTab('sito')">🌐 Sito</button>
+                    <button class="admin-tab" onclick="switchTab('hero')">Hero Section</button>
+                    <button class="admin-tab" onclick="switchTab('about')">Chi Sono</button>
+                    <button class="admin-tab" onclick="switchTab('projects')">Progetti</button>
+                    <button class="admin-tab" onclick="switchTab('experience')">Esperienza</button>
+                    <button class="admin-tab" onclick="switchTab('contact')">Contatti</button>
+                    <button class="admin-tab" onclick="switchTab('settings')">⚙️ Impostazioni</button>
+                </div>
+
+                <!-- Sito Tab -->
+                <div id="sito" class="admin-tab-content active">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">⚙️ Impostazioni Sito</h3>
+                    <div class="form-group">
+                        <label>Titolo Pagina (Browser Tab)</label>
+                        <input type="text" id="siteTitle" placeholder="Es. Andrea Meneghetti - Software Developer">
+                        <small style="color: var(--text-muted); display: block; margin-top: 0.25rem;">Questo è il titolo
+                            che appare nella scheda del browser</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrizione Sito (Meta)</label>
+                        <textarea id="siteDescription"
+                            placeholder="Breve descrizione del tuo portfolio per i motori di ricerca..."></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="saveSettings()">Salva Impostazioni</button>
+                    </div>
+                </div>
+
+                <!-- Hero Tab -->
+                <div id="hero" class="admin-tab-content active">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Modifica Hero Section</h3>
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" id="heroName" placeholder="Il tuo nome">
+                    </div>
+                    <div class="form-group">
+                        <label>Titolo Professionale</label>
+                        <input type="text" id="heroTitle" placeholder="Es. Software Developer | Full-Stack Engineer">
+                    </div>
+                    <div class="form-group">
+                        <label>Sottotitolo</label>
+                        <input type="text" id="heroSubtitle" placeholder="Es. Creo soluzioni digitali innovative">
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="saveHero()">Salva Modifiche</button>
+                    </div>
+                </div>
+
+                <!-- About Tab -->
+                <div id="about" class="admin-tab-content">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Modifica Chi Sono</h3>
+                    <div class="form-group">
+                        <label>Titolo Sezione</label>
+                        <input type="text" id="aboutTitle" placeholder="Es. Sviluppatore Appassionato">
+                    </div>
+                    <div class="form-group">
+                        <label>Primo Paragrafo</label>
+                        <textarea id="aboutPara1" placeholder="Descrivi chi sei..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Secondo Paragrafo</label>
+                        <textarea id="aboutPara2" placeholder="Continua la descrizione..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Competenze (comma-separate)</label>
+                        <textarea id="aboutSkills" placeholder="Es. JavaScript, Python, React, Node.js..."></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="saveAbout()">Salva Modifiche</button>
+                    </div>
+                </div>
+
+                <!-- Projects Tab -->
+                <div id="projects" class="admin-tab-content">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Gestisci Progetti</h3>
+                    <div id="projectsList" class="admin-list"></div>
+                    <button class="btn-save" onclick="openProjectForm('new')"
+                        style="width: 100%; margin-bottom: 1.5rem;">+ Aggiungi Nuovo Progetto</button>
+
+                    <div id="projectForm"
+                        style="display: none; background: rgba(0, 212, 255, 0.05); padding: 1.5rem; border-radius: 5px; border: 1px solid rgba(0, 212, 255, 0.2);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Modifica Progetto</h4>
+                        <input type="hidden" id="projectIndex">
+                        <div class="form-group">
+                            <label>Titolo</label>
+                            <input type="text" id="projectTitle" placeholder="Titolo del progetto">
+                        </div>
+                        <div class="form-group">
+                            <label>Descrizione</label>
+                            <textarea id="projectDesc" placeholder="Descrivi il progetto..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tecnologie (comma-separate)</label>
+                            <input type="text" id="projectTechs" placeholder="Es. React, Node.js, PostgreSQL">
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn-save" onclick="saveProject()">Salva Progetto</button>
+                            <button class="btn-delete" onclick="closeProjectForm()">Annulla</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Tab -->
+                <div id="experience" class="admin-tab-content">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Gestisci Esperienze</h3>
+                    <div id="experienceList" class="admin-list"></div>
+                    <button class="btn-save" onclick="openExpForm('new')" style="width: 100%; margin-bottom: 1.5rem;">+
+                        Aggiungi Esperienza</button>
+
+                    <div id="expForm"
+                        style="display: none; background: rgba(0, 212, 255, 0.05); padding: 1.5rem; border-radius: 5px; border: 1px solid rgba(0, 212, 255, 0.2);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Modifica Esperienza</h4>
+                        <input type="hidden" id="expIndex">
+                        <div class="form-group">
+                            <label>Posizione</label>
+                            <input type="text" id="expTitle" placeholder="Es. Senior Developer">
+                        </div>
+                        <div class="form-group">
+                            <label>Azienda</label>
+                            <input type="text" id="expCompany" placeholder="Nome azienda">
+                        </div>
+                        <div class="form-group">
+                            <label>Periodo</label>
+                            <input type="text" id="expDate" placeholder="Es. 2022 - Presente">
+                        </div>
+                        <div class="form-group">
+                            <label>Descrizione</label>
+                            <textarea id="expDesc" placeholder="Descrivi le responsabilità..."></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn-save" onclick="saveExp()">Salva Esperienza</button>
+                            <button class="btn-delete" onclick="closeExpForm()">Annulla</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Tab -->
+                <div id="contact" class="admin-tab-content">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Modifica Contatti</h3>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="contactEmail" placeholder="tua@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>LinkedIn URL</label>
+                        <input type="url" id="contactLinkedin" placeholder="https://linkedin.com/in/tuoprofilo">
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub URL</label>
+                        <input type="url" id="contactGithub" placeholder="https://github.com/tuoprofilo">
+                    </div>
+                    <div class="form-group">
+                        <label>Twitter URL</label>
+                        <input type="url" id="contactTwitter" placeholder="https://twitter.com/tuoprofilo">
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="saveContact()">Salva Contatti</button>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settings" class="admin-tab-content">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">⚙️ Impostazioni</h3>
+
+                    <hr class="admin-divider">
+                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">📝 Editor JSON - Modifica Tutto</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Modifica direttamente
+                        il JSON per personalizzare completamente il tuo portfolio:</p>
+                    <div class="form-group">
+                        <textarea id="jsonEditor" placeholder="Incolla il JSON da modificare..."
+                            style="font-family: monospace; font-size: 12px; height: 300px;"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="loadJsonIntoEditor()">📥 Carica JSON Attuale</button>
+                        <button class="btn-save" onclick="saveJsonFromEditor()">💾 Salva JSON Modificato</button>
+                    </div>
+
+                    <hr class="admin-divider">
+                    <div class="form-group">
+                        <label>Cambia Password Admin</label>
+                        <input type="password" id="newPassword" placeholder="Nuova password">
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="changePassword()">Cambia Password</button>
+                    </div>
+                    <hr class="admin-divider">
+                    <div class="form-group">
+                        <label>Resetta Password</label>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-delete" onclick="resetPassword()" style="width: 100%;">🔄 Resetta a
+                            "admin123"</button>
+                    </div>
+                    <hr class="admin-divider">
+                    <div class="form-group">
+                        <label>Scarica Backup JSON</label>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-save" onclick="downloadBackup()">📥 Scarica Backup</button>
+                    </div>
+                    <hr class="admin-divider">
+                    <div class="form-buttons">
+                        <button class="btn-delete" onclick="logoutAdmin()" style="width: 100%;">Esci</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/smooth-animations.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/admin-core.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/experience.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animation-loader.js"></script>
+    <script src="js/project-links.js"></script> <!-- Script per rendere cliccabili le card dei progetti -->
+</body>
+
+</html>

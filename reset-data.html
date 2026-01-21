@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Portfolio Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        .success {
+            color: #10b981;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .info {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔄 Reset Portfolio Data</h1>
+        <p>Clicca il pulsante qui sotto per cancellare i dati vecchi dal localStorage e caricare il nuovo progetto
+            MindBody.</p>
+
+        <div class="info">
+            <strong>📋 Cosa verrà fatto:</strong>
+            <ul style="text-align: left; margin: 0.5rem 0;">
+                <li>Cancellazione dei progetti vecchi</li>
+                <li>Caricamento del progetto MindBody</li>
+                <li>Aggiornamento delle competenze</li>
+            </ul>
+        </div>
+
+        <button onclick="resetData()">Reset e Carica Nuovi Dati</button>
+        <div class="success" id="successMsg">✅ Dati aggiornati con successo! Puoi tornare alla homepage.</div>
+    </div>
+
+    <script>
+        function resetData() {
+            // Cancella i dati dei progetti dal localStorage
+            localStorage.removeItem('projectsData');
+            localStorage.removeItem('aboutData');
+
+            // Imposta i nuovi dati
+            const newProjectsData = [
+                {
+                    id: 'mindbody',
+                    title: 'MindBody - Piattaforma Benessere Integrato',
+                    description: 'Ecosistema di microservizi per il benessere psicofisico che integra supporto mentale, allenamento fisico e nutrizione in un\'unica piattaforma.',
+                    techs: 'Java, Spring Boot, PostgreSQL, JPA/Hibernate, Maven'
+                }
+            ];
+
+            const newAboutData = {
+                title: 'Sviluppatore Appassionato di Tecnologia',
+                para1: 'Sono un informatico con esperienza nello sviluppo di applicazioni web moderne e soluzioni backend robuste. Mi piace risolvere problemi complessi e creare interfacce user-friendly che risolvono problemi reali.',
+                para2: 'Con una solida formazione in ingegneria del software, collaboro con team multidisciplinari per consegnare progetti di qualità che superano le aspettative.',
+                skills: 'Java, Spring Boot, PostgreSQL, JPA/Hibernate, Maven, HTML, CSS, PHP, React, Python, Numpy, Pandas, PyTorch, Figma, Unity, C#'
+            };
+
+            localStorage.setItem('projectsData', JSON.stringify(newProjectsData));
+            localStorage.setItem('aboutData', JSON.stringify(newAboutData));
+
+            // Mostra messaggio di successo
+            document.getElementById('successMsg').style.display = 'block';
+
+            // Reindirizza alla homepage dopo 2 secondi
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
